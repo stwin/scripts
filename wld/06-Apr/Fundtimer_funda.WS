@@ -1,0 +1,55 @@
+{$NO_AUTO_EXECUTE}
+UseUpdatedEma( true );
+EnableSynch( false );
+
+///////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+// Main Program
+ const s ='Symbol,Name,Ask,Average Daily Volume,Bid,Ask(Real Time),Bid(Real Time),'
+       + 'Book Value,Change,Change(Real Time),After Hours Change( Real Time),'
+       + 'Dividend/Share,Last Trade Date,Trade Date,Earnings/Share,Error Indication,'
+       + 'EPS Estimate Current Year,EPS Estimate Next Year,EPS Estimate Next Quarter,'
+       + 'Days Low,Days High,52-week Low,52-week High,'
+       + 'Holdings Gain Percent,Annualized Gain,Holdings Gain,Holdings Gain Percent (RT),'
+       + 'More Info,Order Book (Real-time),Market Capitalization,Market Cap (Real-time),'
+       + 'EBITDA,Change From 52-week Low,Percent Change From 52-week Low,'
+       + 'Last Trade Size,Change From 52-week High,Percent Change From 52-week High,'
+       + 'Last Trade (With Time),Last Trade (Price Only),High Limit,Low Limit,'
+       + 'Days Range,Days Range (Real-time),50-day Moving Average,200-day Moving Average,'
+       + 'Change From 200-day Moving Average,Percent Change From 200-day Moving Average,'
+       + 'Change From 50-day Moving Average,Percent Change From 50-day Moving Average,'
+       + 'Open,Previous Close,Change in Percent,Price/Sales,Price/Book,Ex-Dividend Date,'
+       + 'P/E Ratio,Dividend Pay Date,P/E Ratio (Real-time),PEG Ratio,'
+       + 'Price/EPS Estimate Current Year, Price/EPS Estimate Next Year,'
+       + 'Short Ratio,Last Trade Time,Ticker Trend,1 yr Target Price,Volume,'
+       + 'Holdings Value,Holdings Value (Real-time),52-week Range,Days Value Change,'
+       + 'Days Value Change (Real-time),Stock Exchange,Dividend Yield';
+
+
+// Yahoo matching field parameter
+const tt = 'snaa2bb2b3b4c1c6c8dd1d2ee1e7e8e9ghjkg1g3g4g5'
+          +'ii5j1j3j4j5j6k3k4k5ll1l2l3mm2m3m4m5m6m7m8'
+          +'opp2p5p6qrr1r2r5r6r7s7t1t7t8vv1v7ww1w4xy';
+
+var IE: ComVariant;
+var x,url: string;
+
+url :='http://finance.yahoo.com/d/quotes.csv?s='+GetSymbol+'&f='+tt;
+Print ( url );
+IE := CreateOleObject('InternetExplorer.Application');
+IE.Visible := false;
+IE.Navigate(url);
+while IE.ReadyState <> 4 do sleep( 1 );
+x := IE.Document.all.Item(0).InnerText;
+
+function fund( item: integer): string;
+begin
+  Result := GetToken( x, item, ',' );
+end;
+
+//Note, starting from 0, realtime bid is the 6th parameter so:
+var Bid: float = float( fund( 3 ) );
+PrintStatus( 'Bid = ' + FloatToStr( Bid ) );
