@@ -1,0 +1,10 @@
+bin\Debug\RunWealthLab.exe
+bin\Debug\RunWealthLab.pdb
+bin\Debug\Interop.WealthLab.dll
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Interop.WealthLab.dll
+obj\Debug\RunWealthLab.csproj.ResolveComReference.cache
+obj\Debug\RunWealthLab.Properties.Resources.resources
+obj\Debug\RunWealthLab.csproj.GenerateResource.Cache
+obj\Debug\RunWealthLab.exe
+obj\Debug\RunWealthLab.pdb

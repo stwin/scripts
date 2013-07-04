@@ -1,0 +1,10 @@
+C:\ST\WLD30\CSharpScripts\obj\Debug\ResolveAssemblyReference.cache
+C:\ST\WLD30\CSharpScripts\obj\Debug\Interop.WealthLab.dll
+C:\ST\WLD30\CSharpScripts\obj\Debug\Wl_CSharp_Scripts.csproj.ResolveComReference.cache
+C:\ST\WLD30\CSharpScripts\obj\Debug\MyScript.dll
+C:\ST\WLD30\CSharpScripts\obj\Debug\MyScript.pdb
+C:\ST\WLD30\CSharpScripts\bin\Debug\MyScript.dll
+C:\ST\WLD30\CSharpScripts\bin\Debug\MyScript.pdb
+C:\ST\WLD30\CSharpScripts\bin\Debug\WLData.dll
+C:\ST\WLD30\CSharpScripts\bin\Debug\WLE.dll
+C:\ST\WLD30\CSharpScripts\bin\Debug\Interop.WealthLab.dll

@@ -1,0 +1,12 @@
+C:\ST\WLD30\CSharpScripts\WL_CSharp_Tester\obj\Debug\Interop.WealthLab.dll
+C:\ST\WLD30\CSharpScripts\WL_CSharp_Tester\obj\Debug\WL_CSharp_Tester.csproj.ResolveComReference.cache
+C:\ST\WLD30\CSharpScripts\WL_CSharp_Tester\obj\Debug\WL_CSharp_Tester.exe
+C:\ST\WLD30\CSharpScripts\WL_CSharp_Tester\obj\Debug\WL_CSharp_Tester.pdb
+C:\ST\WLD30\CSharpScripts\WL_CSharp_Tester\bin\Debug\WL_CSharp_Tester.exe
+C:\ST\WLD30\CSharpScripts\WL_CSharp_Tester\bin\Debug\WL_CSharp_Tester.pdb
+C:\ST\WLD30\CSharpScripts\WL_CSharp_Tester\bin\Debug\MyScript.dll
+C:\ST\WLD30\CSharpScripts\WL_CSharp_Tester\bin\Debug\WLE.dll
+C:\ST\WLD30\CSharpScripts\WL_CSharp_Tester\bin\Debug\Interop.WealthLab.dll
+C:\ST\WLD30\CSharpScripts\WL_CSharp_Tester\bin\Debug\MyScript.pdb
+C:\ST\WLD30\CSharpScripts\WL_CSharp_Tester\obj\Debug\ResolveAssemblyReference.cache
+C:\ST\WLD30\CSharpScripts\WL_CSharp_Tester\bin\Debug\WL_CSharp_Tester.exe.config

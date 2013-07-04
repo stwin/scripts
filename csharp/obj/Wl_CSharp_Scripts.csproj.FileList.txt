@@ -1,0 +1,15 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Interop.WealthLab.dll
+obj\Debug\Wl_CSharp_Scripts.csproj.ResolveComReference.cache
+bin\Debug\Interop.WealthLab.dll
+bin\Debug\WLData.dll
+bin\Debug\Interop.TC2000Dev.dll
+bin\Debug\Interop.VBA.dll
+bin\Debug\WLE.dll
+bin\Debug\MyScript.dll
+bin\Debug\MyScript.pdb
+obj\Debug\MyScript.dll
+obj\Debug\MyScript.pdb
+obj\Debug\MyScript.Adapters.EMini1MinStaticAdapter.resources
+obj\Debug\Wl_CSharp_Scripts.csproj.GenerateResource.Cache
+obj\Debug\Emini1MinRT.Emini1MinRealDataCommon.resources

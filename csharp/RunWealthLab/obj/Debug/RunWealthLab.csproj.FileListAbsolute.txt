@@ -1,0 +1,11 @@
+C:\ST\WLD30\CSharpScripts\RunWealthLab\bin\Debug\RunWealthLab.exe
+C:\ST\WLD30\CSharpScripts\RunWealthLab\bin\Debug\RunWealthLab.pdb
+C:\ST\WLD30\CSharpScripts\RunWealthLab\bin\Debug\Interop.WealthLab.dll
+C:\ST\WLD30\CSharpScripts\RunWealthLab\obj\Debug\ResolveAssemblyReference.cache
+C:\ST\WLD30\CSharpScripts\RunWealthLab\obj\Debug\Interop.WealthLab.dll
+C:\ST\WLD30\CSharpScripts\RunWealthLab\obj\Debug\RunWealthLab.csproj.ResolveComReference.cache
+C:\ST\WLD30\CSharpScripts\RunWealthLab\obj\Debug\RunWealthLab.Properties.Resources.resources
+C:\ST\WLD30\CSharpScripts\RunWealthLab\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\ST\WLD30\CSharpScripts\RunWealthLab\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\ST\WLD30\CSharpScripts\RunWealthLab\obj\Debug\RunWealthLab.exe
+C:\ST\WLD30\CSharpScripts\RunWealthLab\obj\Debug\RunWealthLab.pdb

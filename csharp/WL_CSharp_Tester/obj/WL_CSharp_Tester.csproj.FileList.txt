@@ -1,0 +1,11 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Interop.WealthLab.dll
+obj\Debug\WL_CSharp_Tester.csproj.ResolveComReference.cache
+bin\Debug\WL_CSharp_Tester.exe
+bin\Debug\WL_CSharp_Tester.pdb
+bin\Debug\Interop.WealthLab.dll
+obj\Debug\WL_CSharp_Tester.exe
+obj\Debug\WL_CSharp_Tester.pdb
+bin\Debug\WLE.dll
+bin\Debug\MyScript.dll
+bin\Debug\MyScript.pdb
