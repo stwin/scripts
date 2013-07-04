@@ -1,0 +1,104 @@
+
+rootDir = 'C:\ST\WLE';
+
+//=============================================================================
+function ReadNHNLSeries (fileName, NHSeries, NLSeries)
+{
+  lastUpdatedBar = -1;
+  fileHandle = fopen(fileName, "w");
+  if (!fileHandle)
+  {
+//    _TRACE("ERROR: file can not be found (does not exist)");
+    printf("ERROR: file can not be found (does not exist)");
+    return;
+  } 
+
+  while( ! feof( fh ) )
+  {
+    line := fgets(fileHandle);
+    dateStr := GetToken (line, 0, ',');
+    numHighStr := GetToken (line, 1, ',');
+    numLowStr := GetToken (line, 2, ',');
+    lastUpdatedBar := DateToBar(StrToDate(dateStr));
+
+    try
+      SetSeriesValue (lastUpdatedBar, NHSeries, StrToFloat(numHighStr));
+      SetSeriesValue (lastUpdatedBar, NLSeries, StrToFloat(numLowStr));
+    except
+    end;
+
+  }
+  fclose(fileHandle);
+  if( lastUpdatedBar < 0 ) then
+    lastUpdatedBar = -1;
+  return lastUpdatedBar;
+}
+
+
+
+var fileName: string;
+var NHSeries, NLSeries, NHNLSeries, paneNHNL_Line, paneNHNL_Hist: integer;
+var lastUpdatedBar, tradingDays: integer;
+
+if ( IsDaily ) then
+begin
+  fileName := rootDir + '\NH-NL-Daily.txt';
+  tradingDays := 252;
+end
+else if ( IsWeekly ) then
+begin
+  fileName := rootDir + '\NH-NL-Weekly.txt';
+  tradingDays := 52;
+end
+else if ( IsMonthly ) then
+begin
+  fileName := rootDir + '\NH-NL-Monthly.txt';
+  tradingDays := 12;
+end
+else
+  abort;
+
+NHSeries := CreateSeries ();
+NLSeries := CreateSeries ();
+
+lastUpdatedBar := ReadNHNLSeries (fileName, NHSeries, NLSeries);
+
+if( lastUpdatedBar <> BarCount-1 ) then
+begin
+  UpdateNHNLSeries( lastUpdatedBar, tradingDays, NHSeries, NLSeries );
+  WriteNHNLSeries( fileName, lastUpdatedBar, NHSeries, NLSeries );
+  var date1: integer = GetYear(lastUpdatedBar+1) * 10000 + GetMonth(lastUpdatedBar+1) * 100 + GetDay(lastUpdatedBar+1);
+  var date2: integer = GetYear(BarCount-1) * 10000 + GetMonth(BarCount-1) * 100 + GetDay(BarCount-1);
+  PrintStatus( 'Updated: ' + DateToStr( date1 ) + ' to ' + DateToStr( date2 ) );
+end;
+
+NHNLSeries := SubtractSeries( NHSeries, NLSeries );
+
+paneNHNL_Line := CreatePane( 100, False, False);
+paneNHNL_Hist := CreatePane( 100, False, False );
+
+DrawHorzLine (0, paneNHNL_Line, #Olive, #Thin);
+DrawHorzLine (300, paneNHNL_Line, 887, #Thin);
+DrawHorzLine (600, paneNHNL_Line, 887, #Thin);
+DrawHorzLine (-300, paneNHNL_Line, 887, #Thin);
+PlotSeriesLabel( NHSeries , paneNHNL_Line, #Green, #Thin, 'Number of 52-week High' );
+PlotSeriesLabel( NLSeries , paneNHNL_Line, #Red, #Thin, 'Number of 52-week Low' );
+
+DrawHorzLine (0, paneNHNL_Hist, #Olive, #Thin);
+DrawHorzLine (300, paneNHNL_Hist, 887, #Thin);
+DrawHorzLine (600, paneNHNL_Hist, 887, #Thin);
+DrawHorzLine (-300, paneNHNL_Hist, 887, #Thin);
+PlotSeriesLabel( NHNLSeries, paneNHNL_Hist, 222, #Histogram, '52-week NHNL Index' );
+var NHNLSeries2: integer = AddSeriesValue( NHNLSeries, 0 );
+PlotSeries( NHNLSeries2, paneNHNL_Hist, 000, #Thin );
+
+
+HideVolume;
+
+
+//SaveChartWithSize( 1200, 768 ); // For one year
+//SaveChartWithSize( 1024, 768 );
+
+
+
+
